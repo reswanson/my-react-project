@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import RegisterUserForm from './Form/RegisterUserForm'
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <header className="App-banner">
         <p>
-          Hello <code>Ron Swanson</code>
+          Welcome to Rons Bookstore
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <RegisterUserForm />
+
     </div>
+
   );
 }
 
