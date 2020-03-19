@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class RegisterUserForm extends React.Component {
   constructor(props) {
     super(props);
@@ -22,6 +23,7 @@ class RegisterUserForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
+  
           User to Register:
           <input type="text" value={this.state.value} onChange={this.handleChange} />
         </label>
