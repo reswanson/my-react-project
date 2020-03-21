@@ -7,9 +7,8 @@ class ParentComponent extends Component {
   render() {
     return (
       <p>
-        <hr/>
         I'm a parent component.
-        <FirstChild wherecalledfrom = "fromparentcomponent}"/>
+        <FirstChild wherecalledfrom = "fromparentcomponent"/>
       </p>
     );
   }

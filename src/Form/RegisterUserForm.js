@@ -24,16 +24,16 @@ class RegisterUserForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
+        	  <h2> Register New User </h2>
+
         <label>
-  
-          User to Register:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          User name: <input type="text" value={this.state.value} onChange={this.handleChange} />
         </label>
         <input type="submit" value="Submit" />
         <p/>
-          The username is: ( {this.state.value} )
+        The username is: ( {this.state.value} )
+        <hr/>
         <FirstChild wherecalledfrom = "fromregisteruserform"/>
-
       </form>
     );
   }
