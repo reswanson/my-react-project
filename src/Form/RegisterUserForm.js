@@ -1,4 +1,6 @@
 import React from 'react';
+import FirstChild from '../firstchild';  // we need to import the child component first
+
 
 
 class RegisterUserForm extends React.Component {
@@ -28,6 +30,10 @@ class RegisterUserForm extends React.Component {
           <input type="text" value={this.state.value} onChange={this.handleChange} />
         </label>
         <input type="submit" value="Submit" />
+        <p/>
+          The username is: ( {this.state.value} )
+        <FirstChild wherecalledfrom = "fromregisteruserform"/>
+
       </form>
     );
   }

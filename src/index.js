@@ -15,7 +15,10 @@ import Footer from "./footer";
 const routing = (
   <Router>
     <div>
-      <Header />
+      <header className="App-header">
+        <Header />
+      </header>
+
       <Switch>
         <Route exact path="/" component={App} />
       </Switch>

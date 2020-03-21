@@ -6,10 +6,11 @@ import FirstChild from './firstchild';  // we need to import the child component
 class ParentComponent extends Component {
   render() {
     return (
-      <h1>
-        I'm the parent component.
-        <FirstChild />
-      </h1>
+      <p>
+        <hr/>
+        I'm a parent component.
+        <FirstChild wherecalledfrom = "fromparentcomponent}"/>
+      </p>
     );
   }
 }

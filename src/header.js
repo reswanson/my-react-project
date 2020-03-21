@@ -3,7 +3,7 @@ import React from "react";
 function Header() {
   return (
     <div>
-        My default header - Rons Bookstore - Awesome books - low prices
+        My default header - Ron's Bookstore - Awesome books - low prices
     </div>
   );
 }

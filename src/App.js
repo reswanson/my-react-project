@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import RegisterUserForm from './Form/RegisterUserForm'
 import ParentComponent from './parentcomponent'
 
