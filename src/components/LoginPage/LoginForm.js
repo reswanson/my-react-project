@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Card, Form, FormGroup, FormControl, Button } from 'react-bootstrap';
+import { Form, FormGroup, FormControl, Button } from 'react-bootstrap';
 
-
-
+import Panel from 'react-bootstrap/lib/Panel'
 
 const divStyle = {
   display: 'flex',
@@ -34,7 +33,7 @@ class LoginForm extends Component {
   render() {
     return (
       <div style={divStyle}>
-        <Card style={panelStyle}>
+        <Panel style={panelStyle}>
           <Form horizontal className="LoginForm" id="loginForm">
             <FormGroup controlId="formEmail">
               <FormControl type="email" placeholder="Email Address" />
@@ -48,7 +47,7 @@ class LoginForm extends Component {
               </Button>
             </FormGroup>
           </Form>
-        </Card>
+        </Panel>
       </div>
     )
   }
