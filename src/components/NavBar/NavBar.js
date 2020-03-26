@@ -18,8 +18,8 @@ class NavBar extends Component {
               <a href="/">Ron's Bookstore</a>
           </Navbar.Brand>
         <Nav>
-          <NavItem eventKey={1} href="/">Home</NavItem>
-          <NavItem eventKey={2} href="/login">Login</NavItem>
+          <NavItem eventkey={1} href="/">Home</NavItem>
+          <NavItem eventkey={2} href="/login">Login</NavItem>
         </Nav>
       </Navbar>
     );
