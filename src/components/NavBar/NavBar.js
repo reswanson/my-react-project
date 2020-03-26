@@ -7,7 +7,7 @@ import './NavBar.css';
 class NavBar extends Component {
   render() {
     return (
-      <Navbar >
+      <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
 		      <img
