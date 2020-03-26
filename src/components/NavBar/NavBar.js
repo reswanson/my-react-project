@@ -8,7 +8,6 @@ class NavBar extends Component {
   render() {
     return (
       <Navbar>
-        <Navbar.Header>
           <Navbar.Brand>
 		      <img
 		        src="/header.png"
@@ -18,7 +17,6 @@ class NavBar extends Component {
 		      />
               <a href="/">Ron's Bookstore</a>
           </Navbar.Brand>
-        </Navbar.Header>
         <Nav>
           <NavItem eventKey={1} href="/">Home</NavItem>
           <NavItem eventKey={2} href="/login">Login</NavItem>
