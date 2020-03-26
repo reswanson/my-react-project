@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Panel, Form, FormGroup, FormControl, Button } from 'react-bootstrap';
+import { Card, Form, FormGroup, FormControl, Button } from 'react-bootstrap';
 
 
 
@@ -34,7 +34,7 @@ class LoginForm extends Component {
   render() {
     return (
       <div style={divStyle}>
-        <Panel style={panelStyle}>
+        <Card style={panelStyle}>
           <Form horizontal className="LoginForm" id="loginForm">
             <FormGroup controlId="formEmail">
               <FormControl type="email" placeholder="Email Address" />
@@ -48,7 +48,7 @@ class LoginForm extends Component {
               </Button>
             </FormGroup>
           </Form>
-        </Panel>
+        </Card>
       </div>
     )
   }
