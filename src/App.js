@@ -5,6 +5,10 @@ import {
 } from 'react-router-dom';
 import HomePage from './components/HomePage/HomePage';
 import LoginPage from './components/LoginPage/LoginPage';
+
+import Header from "./header";
+import Footer from "./footer";
+
 import './App.css';
 
 const Home = () => (
@@ -19,10 +23,20 @@ class App extends Component {
   render() {
     return (
       <Router>
+
         <div className="App">
+         <header className="App-header">
+        <Header />
+        </header>
+
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
+        <header className="App-header">
+        <Footer />
+        </header>
+
         </div>
+
       </Router>
     );
   }

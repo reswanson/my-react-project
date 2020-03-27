@@ -14,7 +14,7 @@ const panelStyle = {
   border: 0,
   paddingLeft: 20,
   paddingRight: 20,
-  width: 300,
+  width: 30,
 };
 
 const buttonStyle = {
@@ -22,32 +22,44 @@ const buttonStyle = {
 };
 
 class LoginForm extends Component {
-
-  handleFormSubmit(e) {
-    e.preventDefault();
-
-    console.log("FORM SUBMIT!");
-
+	
+  constructor(props) {
+    super(props);
+    this.state = { username: '' };
   }
+  mySubmitHandler = (event) => {
+    event.preventDefault();
+    alert("You are submitting " + this.state.username);
+  }
+  myChangeHandler = (event) => {
+    this.setState({username: event.target.value});
+  }
+
+
 
   render() {
     return (
       <div style={divStyle}>
-        <Panel style={panelStyle}>
-          <Form horizontal className="LoginForm" id="loginForm">
-            <FormGroup controlId="formEmail">
-              <FormControl type="email" placeholder="Hi Natalie!" />
-            </FormGroup>
-            <FormGroup controlId="formPassword">
-              <FormControl type="password" placeholder="Password" />
-            </FormGroup>
-            <FormGroup style={buttonStyle} controlId="formSubmit">
-              <Button bsStyle="primary" type="submit" onClick={this.handleFormSubmit}>
-                Login
-              </Button>
-            </FormGroup>
-          </Form>
-        </Panel>
+      <form stype={panelStyle} onSubmit={this.mySubmitHandler}>
+      <p>Login with your email:</p>
+      <input
+        type='text'
+        onChange={this.myChangeHandler}
+      />
+      <input
+        type='submit'
+      />
+      <p>Click to browse our store:</p>
+      <input
+        type='text'
+        onChange={this.myChangeHandler}
+      />
+      <input
+        type='Browse'
+      />
+      </form>
+
+
       </div>
     )
   }

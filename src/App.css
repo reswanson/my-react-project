@@ -10,11 +10,27 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+  background-color: blue;
   color: white;
+  min-height: 5vh;
+  max-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  font-size: calc(6px + 2vmin);
 }
+
+.App-footer {
+  background-color: blue;
+  color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: left;
+}
+
 
 .App-intro {
   font-size: large;
