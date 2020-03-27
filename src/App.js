@@ -1,23 +1,45 @@
-import React from 'react';
+import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
+import HomePage from './components/HomePage/HomePage';
+import LoginPage from './components/LoginPage/LoginPage';
+
+import Header from "./header";
+import Footer from "./footer";
+
 import './App.css';
-import RegisterUserForm from './Form/RegisterUserForm'
-import ParentComponent from './parentcomponent'
 
+const Home = () => (
+  <HomePage />
+);
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-banner">
-        <p>
-          Welcome to Rons Bookstore
-        </p>
-      </header>
-      <RegisterUserForm />
-      <ParentComponent />
+const Login = () => (
+  <LoginPage />
+);
 
-    </div>
+class App extends Component {
+  render() {
+    return (
+      <Router>
 
-  );
+        <div className="App">
+         <header className="App-header">
+        <Header />
+        </header>
+
+          <Route exact path="/" component={Home} />
+          <Route path="/login" component={Login} />
+        <header className="App-header">
+        <Footer />
+        </header>
+
+        </div>
+
+      </Router>
+    );
+  }
 }
 
 export default App;

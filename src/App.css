@@ -1,16 +1,18 @@
 .App {
   text-align: center;
+  height: 100%;
+  width: 100%;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
 }
 
 .App-header {
   background-color: blue;
   color: white;
-  min-height: 10vh;
+  min-height: 5vh;
   max-height: 10vh;
   display: flex;
   flex-direction: column;
@@ -18,26 +20,23 @@
   justify-content: left;
   font-size: calc(6px + 2vmin);
 }
-
-.App-banner {
-  background-color: black;
-  color: white;
-  min-height: 10vh;
-  max-height: 10vh;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: left;
-  font-size: calc(6px + 2vmin);
-}
-
 
 .App-footer {
   background-color: blue;
   color: white;
-  position: fixed; 
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   text-align: left;
+}
+
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
