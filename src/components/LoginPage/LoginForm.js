@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, FormControl, Button } from 'react-bootstrap';
+import { Panel, Form, FormGroup, FormControl, Button } from 'react-bootstrap';
 
-import Panel from 'react-bootstrap/lib/Panel'
 
 
 const divStyle = {
