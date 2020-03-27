@@ -36,7 +36,7 @@ class LoginForm extends Component {
         <Panel style={panelStyle}>
           <Form horizontal className="LoginForm" id="loginForm">
             <FormGroup controlId="formEmail">
-              <FormControl type="email" placeholder="Email Address" />
+              <FormControl type="email" placeholder="Hi Natalie!" />
             </FormGroup>
             <FormGroup controlId="formPassword">
               <FormControl type="password" placeholder="Password" />
