@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Card, Form, ListGroup, FormGroup, FormControl, Button } from 'react-bootstrap';
+import { Form, FormGroup, FormControl, Button } from 'react-bootstrap';
+
+import Panel from 'react-bootstrap/lib/Panel'
 
 
 const divStyle = {
@@ -32,14 +34,22 @@ class LoginForm extends Component {
   render() {
     return (
       <div style={divStyle}>
-<Card style={{ width: '18rem' }}>
-  <ListGroup variant="flush">
-    <ListGroup.Item>dkdkdkdkd</ListGroup.Item>
-    <ListGroup.Item> asdkldklj</ListGroup.Item>
-    <ListGroup.Item> adkasl</ListGroup.Item>
-  </ListGroup>
-</Card>
-</div>
+        <Panel style={panelStyle}>
+          <Form horizontal className="LoginForm" id="loginForm">
+            <FormGroup controlId="formEmail">
+              <FormControl type="email" placeholder="Email Address" />
+            </FormGroup>
+            <FormGroup controlId="formPassword">
+              <FormControl type="password" placeholder="Password" />
+            </FormGroup>
+            <FormGroup style={buttonStyle} controlId="formSubmit">
+              <Button bsStyle="primary" type="submit" onClick={this.handleFormSubmit}>
+                Login
+              </Button>
+            </FormGroup>
+          </Form>
+        </Panel>
+      </div>
     )
   }
 }
