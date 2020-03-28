@@ -1,0 +1,8 @@
+.Browse {
+    background-color: rgb(152, 230, 255);
+    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -4,7 +4,7 @@ import {
   Route
 } from 'react-router-dom';
 import HomePage from './components/HomePage/HomePage';
-import LoginPage from './components/LoginPage/LoginPage';
+import Browse from './components/SneakPeak/Browse';
 
 import Header from "./header";
 import Footer from "./footer";
@@ -15,9 +15,10 @@ const Home = () => (
   <HomePage />
 );
 
-const Login = () => (
-  <LoginPage />
+const SneakPeak = () => (
+  <Browse />
 );
+
 
 class App extends Component {
   render() {
@@ -25,14 +26,14 @@ class App extends Component {
       <Router>
 
         <div className="App">
-         <header className="App-header">
-        <Header />
-        </header>
 
-          <Route exact path="/" component={Home} />
-          <Route path="/login" component={Login} />
         <header className="App-header">
-        <Footer />
+          <Header />
+        </header>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/browse" component={SneakPeak} />
+        <header className="App-header">
+          <Footer />
         </header>
 
         </div>

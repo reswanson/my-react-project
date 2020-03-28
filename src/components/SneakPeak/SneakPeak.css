@@ -1,0 +1,10 @@
+.Sidebar {
+    background-color: rgb(152, 230, 255);
+    background-image: url('/img/_absolutely_free_photos_original_photos_stack-of-books-on-shelf-4199x1898_29522.jpg');
+    min-height: 50vh;
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: right;
+    justify-content: right;
+}
