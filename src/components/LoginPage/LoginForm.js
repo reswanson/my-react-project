@@ -1,63 +1,81 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Panel, Form, FormGroup, FormControl, Button } from 'react-bootstrap';
 
-
+import SneakPeak from '../SneakPeak/SneakPeak'
 
 const divStyle = {
-  display: 'flex',
   alignItems: 'center',
   marginTop: -100
 };
 
-const panelStyle = {
-  backgroundColor: 'rgba(255,255,255,0.5)',
-  border: 0,
-  paddingLeft: 20,
-  paddingRight: 20,
-  width: 30,
-};
 
 const buttonStyle = {
   marginBottom: 0
 };
 
-class LoginForm extends Component {
-	
-  constructor(props) {
-    super(props);
-    this.state = { username: '' };
+class LoginForm extends React.Component {
+  
+  constructor() {
+    super();
+    this.state = { username: 'myinitialvalue' };
+    this.state = { myenteredusername: '' };
+
+    this.handleChange = this.handleUserFormChange.bind(this);
+    this.handleSubmit = this.handleUserFormSubmit.bind(this);
   }
-  mySubmitHandler = (event) => {
+
+
+changeUsername() {
+	this.setState({
+		username: 'newvalue'
+	})
+}
+
+
+changeitbackUsername() {
+	this.setState({
+		username: 'oldvalue'
+	})
+}
+
+// Maybe implement a reset username field
+// resetUsername() {
+// }
+//       <button onClick={() => this.resetUsername()}>Reset user field</button>
+
+
+handleUserFormChange(event) {
+    this.setState({myenteredusername: event.target.value});
+}
+
+
+handleUserFormSubmit(event) {
+	this.setState({
+		username: this.state.myenteredusername
+	})
     event.preventDefault();
-    alert("You are submitting " + this.state.username);
-  }
-  myChangeHandler = (event) => {
-    this.setState({username: event.target.value});
-  }
+}
+
 
 
 
   render() {
     return (
       <div style={divStyle}>
-      <form stype={panelStyle} onSubmit={this.mySubmitHandler}>
-      <p>Login with your email:</p>
-      <input
-        type='text'
-        onChange={this.myChangeHandler}
-      />
-      <input
-        type='submit'
-      />
-      <p>Click to browse our store:</p>
-      <input
-        type='text'
-        onChange={this.myChangeHandler}
-      />
-      <input
-        type='Browse'
-      />
+      <h3>Welcome (username set from form) ({this.state.username})</h3>
+      <h4>Welcome (testing passed in props from route) ({this.props.username})</h4>
+
+
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Name:
+        <input type="text" value={this.state.myenteredusername}  onChange={this.handleChange}/>
+          </label>
+        <input type="submit" value="Submit" />
       </form>
+
+      <button onClick={() => this.changeUsername()}>changeuser</button>
+      <button onClick={() => this.changeitbackUsername()}>changeuserback</button>
 
 
       </div>

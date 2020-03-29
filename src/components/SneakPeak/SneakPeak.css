@@ -1,0 +1,10 @@
+.Sidebar {
+    background-color: rgb(152, 230, 255);
+    background-image: url('/img/220_F_316374161_SAhQSnfLccWuGh2VcjnWUyz18muIx3yF.jpg');
+    min-height: 50vh;
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: left;
+    justify-content: right;
+}

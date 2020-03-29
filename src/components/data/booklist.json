@@ -1,0 +1,20 @@
+[
+	{
+	    "id": 1,
+        "name":"The long and short of it",
+        "author":"Stubby Smith",
+        "isbn":"4859605070603"
+    }, 
+	{
+	    "id": 2,
+        "name":"You want it when??", 
+        "author":"RAS",
+        "isbn":"9586970693945"
+    },
+	{
+	    "id": 3,
+        "name":"I always knew", 
+        "author":"Nobody Jones",
+        "isbn":"1763784875765"
+    }
+]
