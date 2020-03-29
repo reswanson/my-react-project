@@ -4,7 +4,6 @@ import { Panel, Form, FormGroup, FormControl, Button } from 'react-bootstrap';
 import SneakPeak from '../SneakPeak/SneakPeak'
 
 const divStyle = {
-  display: 'flex',
   alignItems: 'center',
   marginTop: -100
 };
@@ -39,6 +38,11 @@ changeitbackUsername() {
 	})
 }
 
+// Maybe implement a reset username field
+// resetUsername() {
+// }
+//       <button onClick={() => this.resetUsername()}>Reset user field</button>
+
 
 handleUserFormChange(event) {
     this.setState({myenteredusername: event.target.value});
@@ -59,17 +63,17 @@ handleUserFormSubmit(event) {
     return (
       <div style={divStyle}>
       <h3>Welcome {this.state.username}</h3>
-<br/>
- <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <label>
           Name:
-          <input type="text" value={this.state.myenteredusername}  onChange={this.handleChange}/>
-        </label>
+        <input type="text" value={this.state.myenteredusername}  onChange={this.handleChange}/>
+          </label>
         <input type="submit" value="Submit" />
-</form>
+      </form>
 
       <button onClick={() => this.changeUsername()}>changeuser</button>
       <button onClick={() => this.changeitbackUsername()}>changeuserback</button>
+
 
       </div>
     )

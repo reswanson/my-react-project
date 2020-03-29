@@ -28,7 +28,8 @@ class Header extends React.Component {
 	  <div>Ron's Bookstore - Awesome books - low prices
       <br/>
       <BrowseButton />
-
+      <br/>
+      <i>Logged in as: {this.props.loggedInAs}</i>
       </div>
     );
   }

@@ -28,10 +28,12 @@ class App extends Component {
         <div className="App">
 
         <header className="App-header">
-          <Header />
+          <Header loggedInAs='loggedinasadmin'/>
         </header>
+
         <Route exact path="/" component={Home} />
         <Route exact path="/browse" component={SneakPeak} />
+
         <header className="App-header">
           <Footer />
         </header>
