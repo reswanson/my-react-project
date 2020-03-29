@@ -71,7 +71,7 @@ class App extends Component {
         <div className="App">
 
         <header className="App-header">
-          <Header username={this.state.loggedInAs}/>
+          <Header loggedInAs={this.state.loggedInAs}/>
         </header>
 
 
