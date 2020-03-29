@@ -5,6 +5,6 @@
     display: flex;
     background-size: cover;
     background-repeat: no-repeat;
-    align-items: right;
+    align-items: left;
     justify-content: right;
 }

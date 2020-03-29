@@ -25,7 +25,7 @@ class LoginForm extends Component {
         <h2>Please browse our books</h2>
         <br/>
 			<br/>
-            <Showbooklist />
+            <Showbooklist datafile="booklist.json"/>
             <Link to='/'>
               <button type="button" className="btn btn-info">Back to Main page</button>
             </Link>
