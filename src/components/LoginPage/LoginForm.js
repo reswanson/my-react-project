@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Panel, Form, FormGroup, FormControl, Button } from 'react-bootstrap';
 
 import SneakPeak from '../SneakPeak/SneakPeak'
@@ -13,11 +13,11 @@ const buttonStyle = {
   marginBottom: 0
 };
 
-class LoginForm extends Component {
+class LoginForm extends React.Component {
   
-  constructor(props) {
-    super(props);
-    this.state = { username: '' };
+  constructor() {
+    super();
+    this.state = { username: 'myinitialvalue' };
     this.state = { myenteredusername: '' };
 
     this.handleChange = this.handleUserFormChange.bind(this);
@@ -62,7 +62,10 @@ handleUserFormSubmit(event) {
   render() {
     return (
       <div style={divStyle}>
-      <h3>Welcome {this.state.username}</h3>
+      <h3>Welcome (username set from form) ({this.state.username})</h3>
+      <h4>Welcome (testing passed in props from route) ({this.props.username})</h4>
+
+
       <form onSubmit={this.handleSubmit}>
         <label>
           Name:
