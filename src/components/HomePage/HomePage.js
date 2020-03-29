@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NavBar from '../NavBar/NavBar';
 import LoginPage from '../LoginPage/LoginPage'
 import Browse from '../SneakPeak/Browse'
 

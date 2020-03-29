@@ -15,38 +15,62 @@ const buttonStyle = {
 };
 
 class LoginForm extends Component {
-	
+  
   constructor(props) {
     super(props);
     this.state = { username: '' };
-  }
-  mySubmitHandler = (event) => {
-    event.preventDefault();
-    alert("You are submitting " + this.state.username);
-  }
-  myChangeHandler = (event) => {
-    this.setState({username: event.target.value});
+    this.state = { myenteredusername: '' };
+
+    this.handleChange = this.handleUserFormChange.bind(this);
+    this.handleSubmit = this.handleUserFormSubmit.bind(this);
   }
 
-  shoot() {
-	<SneakPeak />
-    alert("Great Shot!");
-  }
+
+changeUsername() {
+	this.setState({
+		username: 'newvalue'
+	})
+}
+
+
+changeitbackUsername() {
+	this.setState({
+		username: 'oldvalue'
+	})
+}
+
+
+handleUserFormChange(event) {
+    this.setState({myenteredusername: event.target.value});
+}
+
+
+handleUserFormSubmit(event) {
+	this.setState({
+		username: this.state.myenteredusername
+	})
+    event.preventDefault();
+}
+
+
 
 
   render() {
     return (
       <div style={divStyle}>
-      <form onSubmit={this.mySubmitHandler}>
-      <p>Login with your email:</p>
-      <input
-        type='text'
-        onChange={this.myChangeHandler}
-      />
-      <input
-        type='submit'
-      />
-      </form>
+      <h3>Welcome {this.state.username}</h3>
+<br/>
+ <form onSubmit={this.handleSubmit}>
+        <label>
+          Name:
+          <input type="text" value={this.state.myenteredusername}  onChange={this.handleChange}/>
+        </label>
+        <input type="submit" value="Submit" />
+</form>
+
+      <button onClick={() => this.changeUsername()}>changeuser</button>
+      <button onClick={() => this.changeitbackUsername()}>changeuserback</button>
+
       </div>
     )
   }
