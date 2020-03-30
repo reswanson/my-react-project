@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import Panel from 'react-bootstrap/lib/Panel'
 import Showbooklist from '../Showbooklist/Showbooklist'
 
+
 import './SneakPeak.css'
 
 import bookdata from '../data/booklist.json';

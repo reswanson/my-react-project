@@ -15,17 +15,17 @@ import Footer from "./footer";
 import './App.css';
 
 
-//          These are the different things I tried to pass props in with <Route>
+//  These are the different things I tried to pass props in with <Route>
 // <Route exact path="/props-through-render" render={(props) => <PropsPage {...props} title={`Props through render`} />} />
 // <Route path='/mybooks' render={routeProps => <Books {...routeProps} booksGetter={getMyBooks}/>} />
 // <Route exact path="/props-through-render" render={(props) => <PropsPage {...props}      title={`Props through render`} />} />
 // <Route path="/greeting/:name" render={(props) => <Greeting text="Hello, " {...props} />} />
 // <Route exact path='/' render={(props) => <LoginForm {...props} doesitwork="2" userName={this.onChangeUserName.bind(this)} />} />
-//         <Route path="/" render={(props) => <LoginForm  doesitwork="Hello" {...props} />} />
-//         <Route path="/" doesitwork="Hello" component={Form}/>
-//         <Route path="/" render={MyLoginForm} />
-//          <Route path='/' render={routeProps => <LoginForm {...routeProps} doesitwork="yesitdoes"/>}  />
-//          <Route path="/" render={(props) => <LoginForm doesitwork="yesitdoes"/>}/>
+// <Route path="/" render={(props) => <LoginForm  doesitwork="Hello" {...props} />} />
+// <Route path="/" doesitwork="Hello" component={Form}/>
+// <Route path="/" render={MyLoginForm} />
+// <Route path='/' render={routeProps => <LoginForm {...routeProps} doesitwork="yesitdoes"/>}  />
+// <Route path="/" render={(props) => <LoginForm doesitwork="yesitdoes"/>}/>
 
 
 const Form = () => (
