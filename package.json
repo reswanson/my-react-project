@@ -13,11 +13,9 @@
     "react-bootstrap": "^0.32.x",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2",
+    "react-router-with-props": "^1.0.0",
     "react-scripts": "3.4.0"
   },
-  "scripts": {
-	"preinstall": "npm install react-bootstrap/lib/Panel"
-  }, 
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

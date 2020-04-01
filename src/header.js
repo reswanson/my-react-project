@@ -1,12 +1,5 @@
 import React from "react";
-import {Link} from 'react-router-dom'
-import { Redirect } from 'react-router';
 import { withRouter } from 'react-router-dom'
-import {browserHistory} from 'react-router';
-
-
-import Browse from './components/SneakPeak/Browse'
-
 
 
 const BrowseButton = withRouter(({ history }) => (

@@ -1,17 +1,11 @@
 import React from 'react';
-import { Panel, Form, FormGroup, FormControl, Button } from 'react-bootstrap';
 
-import SneakPeak from '../SneakPeak/SneakPeak'
 
 const divStyle = {
   alignItems: 'center',
   marginTop: -100
 };
 
-
-const buttonStyle = {
-  marginBottom: 0
-};
 
 class LoginForm extends React.Component {
   
@@ -63,7 +57,7 @@ handleUserFormSubmit(event) {
     return (
       <div style={divStyle}>
       <h3>Welcome (username set from form) ({this.state.username})</h3>
-      <h4>Welcome (testing passed in props from route) ({this.props.username})</h4>
+      <h4>Welcome (testing passed in props from route)</h4>
 
 
       <form onSubmit={this.handleSubmit}>

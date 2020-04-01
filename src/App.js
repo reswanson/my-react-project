@@ -3,14 +3,20 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
-import HomePage from './components/HomePage/HomePage';
+
+// import { PropsRoute, PublicRoute, PrivateRoute } from 'react-router-with-props';
+
 import LoginForm from './components/HomePage/HomePage';
-
-
 import Browse from './components/SneakPeak/Browse';
+import AdminEntry from './components/Admin/AdminEntry';
+import Startup from './components/Lifecycle/Startup';
+import Shutdown from './components/Lifecycle/Shutdown';
+
 
 import Header from "./header";
 import Footer from "./footer";
+
+
 
 import './App.css';
 
@@ -27,6 +33,18 @@ import './App.css';
 // <Route path='/' render={routeProps => <LoginForm {...routeProps} doesitwork="yesitdoes"/>}  />
 // <Route path="/" render={(props) => <LoginForm doesitwork="yesitdoes"/>}/>
 
+// <Route exact path="/" component={() => <LoginForm doesitwork={"yesitdoes"} />} />
+
+//         <Route  path="/" 
+//          render={(routeProps) => (<LoginForm {...routeProps} doesitwork="yesitdoes" />)} 
+//		/>
+
+//<Route
+//  path="/"
+//  render={(routeProps) => (
+//    <LoginForm {...routeProps} doesitwork={'yesitdoes'} />
+//  )}
+// />
 
 const Form = () => (
   <LoginForm />
@@ -36,6 +54,10 @@ const Form = () => (
 const SneakPeak = () => (
   <Browse />
 );
+
+const AdminPage = () => (
+  <AdminEntry />
+ );
 
 const MyLoginForm = (props) => {
       return (
@@ -62,7 +84,13 @@ class App extends Component {
   }
 
 
+componentDidMount() {
+    Startup()
+}
 
+componentWillUnmount () {
+	Shutdown()
+}
 
   render() {
     return (
@@ -77,6 +105,7 @@ class App extends Component {
 
         <Route exact path="/" component={Form} />
         <Route exact path="/browse" component={SneakPeak} />
+        <Route exact path="/admin" component={AdminPage} />
 
         <header className="App-header">
           <Footer />
