@@ -130,7 +130,7 @@ componentWillUnmount () {
         </Switch>
 
 
-        <header className="App-header">
+        <header className="App-footer">
           <Footer />
         </header>
 
