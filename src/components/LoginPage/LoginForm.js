@@ -11,8 +11,8 @@ const divStyle = {
 
 class LoginForm extends Component {
   
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { username: 'myinitialvalue' };
     this.state = { myenteredusername: '' };
     this.handleChange = this.handleChange.bind(this);
@@ -59,6 +59,13 @@ handleUserFormSubmit(event) {
 	})
 }
 
+componentDidUpdate(prevProps,prevState) {
+  // Typical usage (don't forget to compare props):
+  if (prevState.username !== this.state.username) { 
+	  console.log("username field has changed to " + this.state.username)
+   }
+}
+
 
   render() {
     return (
@@ -68,7 +75,7 @@ handleUserFormSubmit(event) {
       <form onSubmit={this.handleSubmit}>
         <label>
           Name:
-        <input type="text" value={this.state.value}  onChange={this.handleChange}/>
+        <input type="text" value={this.state.value || ""}  onChange={this.handleChange}/>
           </label>
         <input type="submit" value="Submit" />
       </form>
