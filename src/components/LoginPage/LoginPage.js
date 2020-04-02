@@ -5,9 +5,7 @@ import './LoginPage.css';
 
 class LoginPage extends Component {
 	
-constructor(props) {
-    super(props);
-}
+
 
   render() {
     return (

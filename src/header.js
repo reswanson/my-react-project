@@ -15,7 +15,6 @@ class Header extends React.Component {
 	
 
   render() {
-	const href=`/browse`
 	
     return (
 	  <div>Ron's Bookstore - Awesome books - low prices

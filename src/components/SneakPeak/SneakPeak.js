@@ -2,18 +2,8 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
 import Showbooklist from '../Showbooklist/Showbooklist'
 
-
 import './SneakPeak.css'
 
-import bookdata from '../data/booklist.json';
-
-
-
-const divStyle = {
-  display: 'flex',
-  alignItems: 'center',
-  marginTop: -100
-};
 
 
 class LoginForm extends Component {

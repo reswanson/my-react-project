@@ -9,7 +9,6 @@ import {
 // import { PropsRoute, PublicRoute, PrivateRoute } from 'react-router-with-props';
 
 import LoginPage from './components/LoginPage/LoginPage';
-import LoginForm from './components/LoginPage/LoginForm';
 
 
 import Browse from './components/SneakPeak/Browse';
@@ -64,27 +63,6 @@ import './App.css';
 
 // <Route path="/" doesitwork="yesitdoes" render={props => <LoginForm {...props} doesitwork="yesitdoes" />} />
 
-const Home = () => (
-  <LoginPage />
-);
-
-const SneakPeak = () => (
-  <Browse />
-);
-
-const AdminPage = () => (
-  <AdminEntry />
- );
-
-//const MyLoginForm = (props) => {
-//      return (
-//        <LoginForm 
-//          doesitwork="itworks"
-////////    {...props}
-//        />
-//      );
-//}   
- 
 
 class App extends Component {
   constructor() {
