@@ -1,7 +1,10 @@
 // Function to be called from componentDidmount to initialize 
 
-function RefreshData() {
-  {console.log("--Refreshing Data store--")}
+
+function RefreshData(props) {
+	
+  console.log("Updating this data: " + props.datatype )
+
   return (null)
 }
 

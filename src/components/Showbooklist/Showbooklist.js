@@ -13,7 +13,7 @@ class Showbooklist extends Component {
 	render () {
 		return (
 		<div>
-		<RefreshData />
+		<RefreshData datatype={"contentlist"}/>
 		<h4> Data file passed in from parent was: {this.props.datafile} </h4>
 		<br/>
 		<table>
