@@ -8,13 +8,15 @@ class AdminEntry extends Component {
 
   render() {
     return (
-      <div >
+      <div className="AdminPage">
         <h2>Admin Page</h2>
         <br/>
-          <Link to='/'>
-            <button type="button" className="btn btn-info">Back to Main page</button>
-          </Link>    
-          <ListPermissions />
+        <Link to='/'>
+          <button type="button" className="btn btn-info">Back to Main page</button>
+        </Link>  
+        <ListPermissions />
+        <br/>
+
 	  </div>
     )
   }

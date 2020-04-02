@@ -1,9 +1,9 @@
-.Sidebar {
-    background-color: rgb(152, 230, 255);
+.AdminPage {
+    background-color: cyan;
+    text-align: left;
     min-height: 50vh;
-    display: flex;
     background-size: cover;
     background-repeat: no-repeat;
     align-items: left;
-    justify-content: right;
+    justify-content: left;
 }

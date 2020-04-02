@@ -105,22 +105,17 @@ componentWillUnmount () {
         <header className="App-header">
           <Header loggedInAs={this.state.loggedInAs}/>
         </header>  
-      
+        
         <ul>
-          <li>
             <Link to="/admin">Admin</Link>
-          </li>
-          <li>
-            <Link to="/login">login</Link>
-          </li>
-          <li>
+          <br/>
+            <Link to="/login">Login</Link>
+          <br/>
             <Link to="/browse">Browse</Link>
-          </li>
         </ul>
 
-        <hr />
 
-        <Switch>
+        <Switch >
           <Route exact path="/admin">
             <AdminEntry />
           </Route>
