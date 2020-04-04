@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 
 import bookdata from '../data/booklist.json';
+import RefreshData from '../Lifecycle/RefreshData';
+
 
 // I dont know how to move the import of bookdata into the class so I can
 // pass the filename in as a prop
 class Showbooklist extends Component {
 	
+	
+	
 	render () {
 		return (
 		<div>
+		<RefreshData datatype={"contentlist"}/>
 		<h4> Data file passed in from parent was: {this.props.datafile} </h4>
 		<br/>
 		<table>

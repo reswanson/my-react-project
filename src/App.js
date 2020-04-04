@@ -1,16 +1,26 @@
 import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
+  Link,
+  Switch,
   Route
 } from 'react-router-dom';
-import HomePage from './components/HomePage/HomePage';
-import LoginForm from './components/HomePage/HomePage';
+
+// import { PropsRoute, PublicRoute, PrivateRoute } from 'react-router-with-props';
+
+import LoginPage from './components/LoginPage/LoginPage';
 
 
 import Browse from './components/SneakPeak/Browse';
+import AdminEntry from './components/Admin/AdminEntry';
+import Startup from './components/Lifecycle/Startup';
+import Shutdown from './components/Lifecycle/Shutdown';
+
 
 import Header from "./header";
 import Footer from "./footer";
+
+
 
 import './App.css';
 
@@ -21,39 +31,48 @@ import './App.css';
 // <Route exact path="/props-through-render" render={(props) => <PropsPage {...props}      title={`Props through render`} />} />
 // <Route path="/greeting/:name" render={(props) => <Greeting text="Hello, " {...props} />} />
 // <Route exact path='/' render={(props) => <LoginForm {...props} doesitwork="2" userName={this.onChangeUserName.bind(this)} />} />
+
 // <Route path="/" render={(props) => <LoginForm  doesitwork="Hello" {...props} />} />
 // <Route path="/" doesitwork="Hello" component={Form}/>
 // <Route path="/" render={MyLoginForm} />
 // <Route path='/' render={routeProps => <LoginForm {...routeProps} doesitwork="yesitdoes"/>}  />
+
 // <Route path="/" render={(props) => <LoginForm doesitwork="yesitdoes"/>}/>
 
+// <Route exact path="/" component={() => <LoginForm doesitwork={"yesitdoes"} />} />
 
-const Form = () => (
-  <LoginForm />
-);
+//         <Route  path="/" 
+//          render={(routeProps) => (<LoginForm {...routeProps} doesitwork="yesitdoes" />)} 
+//		/>
+//<Route
+//  path="/"
+//  render={(routeProps) => (
+//    <LoginForm {...routeProps} doesitwork={'yesitdoes'} />
+//  )}
+// />
 
+//        <Route exact path="/" component={Form} />
 
-const SneakPeak = () => (
-  <Browse />
-);
+//       <Route
+//         path="/"
+//         render={props => (
+//              // pass the sub-routes down to keep nesting
+//           <route.component {...props} doesitwork="yesitodoes" />
+//          )}
+//        />
 
-const MyLoginForm = (props) => {
-      return (
-        <LoginForm 
-          doesitwork="itworks"
-        />
-      );
-}
-
+// <Route path="/" doesitwork="yesitdoes" render={props => <LoginForm {...props} doesitwork="yesitdoes" />} />
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 	this.state = {
 	  loggedInAs: 'not logged in'
 	}
   }
+
+
 
   onChangeUserName(newName) {
 	this.setState({
@@ -62,7 +81,20 @@ class App extends Component {
   }
 
 
+//  onChangeUserName(newName) {
+//	this.setState({
+//		loggedInAs: newName
+//	});
+//  }
 
+
+componentDidMount() {
+    Startup()
+}
+
+componentWillUnmount () {
+	Shutdown()
+}
 
   render() {
     return (
@@ -72,13 +104,33 @@ class App extends Component {
 
         <header className="App-header">
           <Header loggedInAs={this.state.loggedInAs}/>
-        </header>
+        </header>  
+        
+        <ul>
+            <Link to="/admin">Admin</Link>
+          <br/>
+            <Link to="/login">Login</Link>
+          <br/>
+            <Link to="/browse">Browse</Link>
+        </ul>
 
 
-        <Route exact path="/" component={Form} />
-        <Route exact path="/browse" component={SneakPeak} />
+        <Switch >
+          <Route exact path="/admin">
+            <AdminEntry />
+          </Route>
 
-        <header className="App-header">
+          <Route path="/login">
+            <LoginPage doesitwork="yesitdoes" changeUser={this.onChangeUserName.bind(this)} />
+          </Route>
+
+          <Route path="/browse">
+            <Browse />
+          </Route>
+        </Switch>
+
+
+        <header className="App-footer">
           <Footer />
         </header>
 

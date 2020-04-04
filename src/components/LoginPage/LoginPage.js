@@ -4,10 +4,13 @@ import LoginForm from './LoginForm';
 import './LoginPage.css';
 
 class LoginPage extends Component {
+	
+
+
   render() {
     return (
       <div className="LoginPage">
-        <LoginForm />
+        <LoginForm doesitwork={this.props.doesitwork} changeMyUser={this.props.changeUser} />
       </div>
     );
   }

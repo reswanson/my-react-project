@@ -1,0 +1,36 @@
+[
+   {
+     "id": 1,
+     "name":"createaccount"
+   }, {
+     "id": 2,
+     "name":"editaccount"
+   }, {
+     "id": 3,
+     "name":"browsecontent"
+   }, {
+     "id": 4,
+     "name":"viewproduct"
+   }, {
+     "id": 5,
+     "name":"addtocart" 
+   }, {
+     "id": 6,
+     "name":"viewcart"
+   }, {
+     "id": 7,
+     "name":"removefromcart"
+   }, {
+     "id": 8,
+     "name":"makeorder"
+   }, {
+     "id": 9,
+     "name":"printinvoice"
+   }, {
+     "id": 10,
+     "name":"managedatabase" 
+   }, {
+     "id": 11,
+     "name":"editproduct" 
+   }
+]

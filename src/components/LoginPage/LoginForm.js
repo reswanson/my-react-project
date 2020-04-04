@@ -1,47 +1,50 @@
-import React from 'react';
-import { Panel, Form, FormGroup, FormControl, Button } from 'react-bootstrap';
+import React, { Component } from 'react';
 
-import SneakPeak from '../SneakPeak/SneakPeak'
+import './LoginPage.css';
 
-const divStyle = {
+
+const divStyle = {	
   alignItems: 'center',
-  marginTop: -100
+  marginTop: 100
 };
 
 
-const buttonStyle = {
-  marginBottom: 0
-};
-
-class LoginForm extends React.Component {
+class LoginForm extends Component {
   
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { username: 'myinitialvalue' };
     this.state = { myenteredusername: '' };
-
-    this.handleChange = this.handleUserFormChange.bind(this);
-    this.handleSubmit = this.handleUserFormSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
 
-changeUsername() {
+  changeUsername() {
 	this.setState({
 		username: 'newvalue'
 	})
-}
+  }
 
 
-changeitbackUsername() {
+  changeitbackUsername() {
 	this.setState({
 		username: 'oldvalue'
 	})
-}
+  }
 
-// Maybe implement a reset username field
-// resetUsername() {
-// }
-//       <button onClick={() => this.resetUsername()}>Reset user field</button>
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+
+  handleSubmit(event) {
+    event.preventDefault();
+	this.setState({
+		username: this.state.value
+	})
+    this.props.changeMyUser(this.state.value)
+  }
 
 
 handleUserFormChange(event) {
@@ -50,34 +53,36 @@ handleUserFormChange(event) {
 
 
 handleUserFormSubmit(event) {
+    event.preventDefault();
 	this.setState({
 		username: this.state.myenteredusername
 	})
-    event.preventDefault();
 }
 
-
+componentDidUpdate(prevProps,prevState) {
+  // Typical usage (don't forget to compare props):
+  if (prevState.username !== this.state.username) { 
+	  console.log("username field has changed to " + this.state.username)
+   }
+}
 
 
   render() {
     return (
       <div style={divStyle}>
-      <h3>Welcome (username set from form) ({this.state.username})</h3>
-      <h4>Welcome (testing passed in props from route) ({this.props.username})</h4>
-
+      <h3>Welcome (username set from Name form below:) ({this.state.username})</h3>
 
       <form onSubmit={this.handleSubmit}>
         <label>
           Name:
-        <input type="text" value={this.state.myenteredusername}  onChange={this.handleChange}/>
+        <input type="text" value={this.state.value || ""}  onChange={this.handleChange}/>
           </label>
         <input type="submit" value="Submit" />
       </form>
 
       <button onClick={() => this.changeUsername()}>changeuser</button>
       <button onClick={() => this.changeitbackUsername()}>changeuserback</button>
-
-
+      <p/>
       </div>
     )
   }

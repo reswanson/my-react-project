@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: wheat;
   height: 100%;
   width: 100%;
 }
@@ -28,7 +29,7 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  text-align: left;
+  text-align: right;
 }
 
 

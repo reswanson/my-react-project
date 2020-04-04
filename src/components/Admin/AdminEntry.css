@@ -1,0 +1,9 @@
+.AdminPage {
+    background-color: cyan;
+    text-align: left;
+    min-height: 50vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: left;
+    justify-content: left;
+}
