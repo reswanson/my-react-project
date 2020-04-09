@@ -34,10 +34,9 @@ class NewUser extends Component {
     this.setState({ submitted: true });
     const { username, password } = this.state;
     if (username && password) {
-	  console.log("handle User : " + username)
-      console.log("handle pwd : " + password)
+	  console.log("Creating New user with details of: " + username + " : " + password)
 
-      // Call to handle new user request
+      // Call this to handle new user request, using this page: https://jasonwatmore.com/post/2017/09/16/react-redux-user-registration-and-login-tutorial-example
       // this.props.login(username, password);
     }
 
