@@ -9,6 +9,8 @@ import {
 // import { PropsRoute, PublicRoute, PrivateRoute } from 'react-router-with-props';
 
 import LoginPage from './components/LoginPage/LoginPage';
+import NewUser from './components/NewUser/NewUser';
+
 
 
 import Browse from './components/SneakPeak/Browse';
@@ -85,9 +87,10 @@ componentWillUnmount () {
           <Route path="/browse">
             <Browse />
           </Route>
+          <Route path="/newuser">
+            <NewUser />
+          </Route>
         </Switch>
-
-
         <header className="App-footer">
           <Footer />
         </header>
