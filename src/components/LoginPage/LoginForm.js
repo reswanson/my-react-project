@@ -64,7 +64,7 @@ class LoginForm extends Component {
       </form>
 
       <Link to='/newuser'>
-	    <button type="button" className="btn btn-info">New User</button>
+	    <button type="button" className="btn btn-info">Create new user</button>
 	  </Link>
 
       <p/>
