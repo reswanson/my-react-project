@@ -21,12 +21,6 @@ class LoginForm extends Component {
   }
 
 
-// changeUsername() {
-//	this.setState({
-//		username: 'newvalue'
-//	})
-//  }
-
   handleChange(event) {
     event.preventDefault();
     this.setState({value: event.target.value});
@@ -42,24 +36,12 @@ class LoginForm extends Component {
   }
 
 
-//handleUserFormChange(event) {
-//    this.setState({myenteredusername: event.target.value});
-//}
-
-
-//handleUserFormSubmit(event) {
-//    event.preventDefault();
-//	this.setState({
-//		username: this.state.myenteredusername
-//	})
-//}
-
-componentDidUpdate(prevProps,prevState) {
-  // Typical usage (don't forget to compare props):
-  if (prevState.username !== this.state.username) { 
+  componentDidUpdate(prevProps,prevState) {
+	// Typical usage (don't forget to compare props):
+	if (prevState.username !== this.state.username) { 
 	  console.log("username field has changed to " + this.state.username)
-   }
-}
+	}
+  }
 
 
   render() {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect} from 'react-redux'
 import {
   BrowserRouter as Router,
   Link,
@@ -6,45 +7,31 @@ import {
   Route
 } from 'react-router-dom';
 
-// import { PropsRoute, PublicRoute, PrivateRoute } from 'react-router-with-props';
-
 import LoginPage from './components/LoginPage/LoginPage';
 import NewUser from './components/NewUser/NewUser';
-
-
-
 import Browse from './components/SneakPeak/Browse';
 import AdminEntry from './components/Admin/AdminEntry';
 import Startup from './components/Lifecycle/Startup';
 import Shutdown from './components/Lifecycle/Shutdown';
-
 import Header from "./header";
 import Footer from "./footer";
-
 import './App.css';
 
+
+
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 	this.state = {
 	  loggedInAs: 'not logged in'
 	}
   }
-
 
   onChangeUserName(newName) {
 	this.setState({
 		loggedInAs: newName
 	});
   }
-
-
-//  onChangeUserName(newName) {
-//	this.setState({
-//		loggedInAs: newName
-//	});
-//  }
-
 
 componentDidMount() {
     Startup()
@@ -54,6 +41,9 @@ componentWillUnmount () {
 	Shutdown()
 }
 
+//       <p>{this.props.mynewvalue.map(home => <div>{loggedIn}</div>)}</p>
+//       <p>mybookstore {this.props.mynewvalue}</p>
+
   render() {
     return (
       <Router>
@@ -62,16 +52,19 @@ componentWillUnmount () {
 
         <header className="App-header">
           <Header loggedInAs={this.state.loggedInAs}/>
-        </header>  
-        
-        <ul>
+        </header> 
+
+       <p>Redux counter example: items in cart:  ( {this.props.mynewvalue} )</p>
+       <button onClick={this.props.login}>Add item to cart + </button>
+       <button onClick={this.props.logout}>Remove item from cart - </button>
+ 
+          <ul>
             <Link to="/admin">Admin</Link>
           <br/>
             <Link to="/login">Login</Link>
           <br/>
             <Link to="/browse">Browse</Link>
           <br/>
-
         </ul>
 
 
@@ -79,9 +72,8 @@ componentWillUnmount () {
           <Route exact path="/admin">
             <AdminEntry />
           </Route>
-
           <Route path="/login">
-            <LoginPage doesitwork="yesitdoes" changeUser={this.onChangeUserName.bind(this)} />
+            <LoginPage changeUser={this.onChangeUserName.bind(this)} />
           </Route>
 
           <Route path="/browse">
@@ -91,6 +83,7 @@ componentWillUnmount () {
             <NewUser />
           </Route>
         </Switch>
+
         <header className="App-footer">
           <Footer />
         </header>
@@ -102,4 +95,22 @@ componentWillUnmount () {
   }
 }
 
-export default App;
+
+function mapStateToProps(state) {
+return {
+  mynewvalue: state
+ };
+}
+
+function mapDispatchToProps(dispatch) {
+ return {
+  login: () => dispatch({type: 'LOG_IN'}),
+  logout: () => dispatch({type: 'LOG_OUT'})
+ };
+}
+
+
+// export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+
