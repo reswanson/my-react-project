@@ -2,19 +2,44 @@
 	"books" : [   
 	{
 	    "id": 1,
-        "name":"The long and short of it",
-        "desc":"Stubby Smith",
-        "url":"4859605070603"
+        "name":"Jack Pine Savages",
+        "author":"Uncle Vic",
+        "isbn":"4859605070603"
     }, {
 	    "id": 2,
-        "name":"You want it when", 
-        "desc":"RAS",
-        "url":"9586970693945"
+        "name":"You want it when?", 
+        "author":"RAS",
+        "isbn":"9586970693945"
+    }, {
+	    "id": 4,
+        "name":"Sister Golden Hair", 
+        "author":"TRS",
+        "isbn":"8374859607891"
     }, {
 	    "id": 3,
-        "name":"I always knew", 
-        "desc":"Nobody Jones",
-        "url":"1763784875765"
+        "name":"Say Kareendhia twice a day", 
+        "author":"MLS",
+        "isbn":"9093094095069"
+    }, {
+	    "id": 4,
+        "name":"Black hole PBH Fouts", 
+        "author":"RES",
+        "isbn":"9586970693945"
+    }, {
+	    "id": 4,
+        "name":"Adventures of a Steelheader", 
+        "author":"SLS",
+        "isbn":"3894095096979"
+    }, {
+	    "id": 4,
+        "name":"Its wet", 
+        "author":"DMS",
+        "isbn":"3974895986347"
+    }, {
+	    "id": 5,
+        "name":"3 or 2", 
+        "author":"Mr. Hinds Lake Road",
+        "isbn":"1763784875765"
     }
 	]
 }

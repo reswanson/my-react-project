@@ -10,7 +10,7 @@ class LoginPage extends Component {
   render() {
     return (
       <div className="LoginPage">
-        <LoginForm doesitwork={this.props.doesitwork} changeMyUser={this.props.changeUser} />
+        <LoginForm changeMyUser={this.props.changeUser} />
       </div>
     );
   }
