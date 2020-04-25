@@ -9,6 +9,13 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "body-parser": "^1.17.2",
+    "proxy": "http://localhost:3000",
+    "express": "~4.14.1",
+    "mongojs": "^2.4.0",
+    "mongoose": "^4.10.8",
+    "nodemon": "^2.0.3",
+    "isomorphic-fetch": "^2.2.1",
     "react": "^16.13.0",
     "react-bootstrap": "^0.32.x",
     "react-dom": "^16.13.0",
@@ -16,13 +23,21 @@
     "react-router-dom": "^5.1.2",
     "react-router-with-props": "^1.0.0",
     "react-scripts": "3.4.0",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev-server": "nodemon --exec 'node ./src/server/server.js'",
+    "client": "npm start",
+    "server": "nodemon --exec node ./src/server/server.js",
+    "dev": "concurrently --kill-others-on-fail  \"npm run server\" \"npm run client\""
   },
   "eslintConfig": {
     "extends": "react-app"
