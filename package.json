@@ -10,7 +10,6 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "body-parser": "^1.17.2",
-    "proxy": "http://localhost:3000",
     "express": "~4.14.1",
     "mongojs": "^2.4.0",
     "mongoose": "^4.10.8",
@@ -38,7 +37,7 @@
     "client": "npm start",
     "server": "nodemon --exec node ./src/server/server.js",
     "dev": "concurrently --kill-others-on-fail  \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "npm run server"
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
 
   },
   "eslintConfig": {
