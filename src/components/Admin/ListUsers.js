@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import listperms from '../data/listofpermissions.json';
-import RefreshData from '../Lifecycle/RefreshData';
 
 
 // I dont know how to move the import of bookdata into the class so I can
@@ -27,7 +25,8 @@ handleSubmit = async e => {
     const body = await response.text();
     
     this.setState({ responseToPost: body });
-     console.log(body)
+//      console.log(response.text());
+     console.log(body);
   };
 
 	
@@ -36,7 +35,7 @@ handleSubmit = async e => {
 		  <div>
        <button type="submit"  onClick={this.handleSubmit}>Show users</button>
        <br/>
-       <text>{this.responseToPost}</text>
+       <p>{this.responseToPost}</p>
 		  </div>
 		)
 	}	

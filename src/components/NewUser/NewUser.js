@@ -1,5 +1,5 @@
-import React, { Component, PropTypes, Form } from 'react';
-import { UsersContainers } from './UsersContainers'
+import React, { Component } from 'react';
+// import { UsersContainers } from './UsersContainers'
 
 //const UsersApp = () =>
 //    <div>
@@ -8,11 +8,6 @@ import { UsersContainers } from './UsersContainers'
 //    </div>
 
 // export default TodoListApp
-
-const divStyle = {	
-  alignItems: 'center',
-  marginTop: 100
-};
 
 
 class NewUser extends Component {
