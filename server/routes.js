@@ -24,7 +24,7 @@ router.post('/users', function (req, res) {
 
 router.get('/users',  (req, res) => {
 	console.log("in GET users")
-    MyUsers.find({}, {'username': 1, 'email': 1},function (err, allUsers) {
+    MyUsers.find({}, {'username': 1, 'password': 1, 'email': 1},function (err, allUsers) {
         if (err) return console.error(err)
         res.send(allUsers)
     })
