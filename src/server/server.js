@@ -1,16 +1,8 @@
- 
-
 const express = require('express'),
 path = require('path')
-
-//const db='mongodb://appuser:appuser@localhost:27017/'
-//const db='mongodb://appuser:appuser@localhost:27017/applicationdb'
-
 connectionUrl = 'mongodb://localhost:27017/applicationdb?authSource=admin'
-//Mongoose.connect(connectionUrl); 
-
-
 const app = express()
+const PORT = process.env.PORT || 3000;
 
 var usersApi = require('./routes')
 var bodyParser = require('body-parser')
@@ -33,6 +25,7 @@ const logger = (req, res, next) => {
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(logger)
+app.use(express.static(path.join(__dirname, 'build')));
 app.use('/api', usersApi)
 
 const sendHTMLpage = (req, res) => {
@@ -76,13 +69,13 @@ const sendHTMLpage = (req, res) => {
 //    sendHTMLpage(req, res);
 //})
 
-app.get('/testfromserver', (req, res) => {
-  res.send({ express: 'Hello From Express' });
-})
+app.get('*', function (req, res) {
+ res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 
 
-app.listen(process.env.PORT || 3000, function () {
+app.listen(PORT, function () {
     console.log('Application listening on port ' + (process.env.PORT || 3000))
 })
 
