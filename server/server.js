@@ -1,6 +1,7 @@
 const express = require('express'),
 path = require('path')
-connectionUrl = 'mongodb://localhost:27017/applicationdb?authSource=admin'
+//connectionUrl = 'mongodb://localhost:27017/applicationdb?authSource=admin'
+connectionUrl = 'mongodb://appuser2:appuser2@localhost:27017/applicationdb'
 const app = express()
 const PORT = process.env.PORT || 3000;
 
