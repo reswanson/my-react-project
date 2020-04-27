@@ -65,13 +65,13 @@ const sendHTMLpage = (req, res) => {
     res.status(200).send(return_html)
 }
 
-//app.get('/', (req, res) => {
-//    sendHTMLpage(req, res);
-//})
+app.get('/', (req, res) => {
+    sendHTMLpage(req, res);
+})
 
-//app.get('*', function (req, res) {
- //res.sendFile(path.join(__dirname, 'build', 'index.html'));
-//});
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 
 
