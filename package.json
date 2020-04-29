@@ -7,9 +7,10 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "~4.14.1",
-    "uuid":  "~3.1.0",
+    "mongodb": "^3.5.7",
     "mongojs": "^2.4.0",
-    "mongoose": "^4.10.8"
+    "mongoose": "^5.9.10",
+    "uuid": "~3.1.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.3",
@@ -24,4 +25,3 @@
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install  --prefix client && npm run build --prefix client"
   }
 }
-

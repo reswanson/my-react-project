@@ -1,7 +1,17 @@
 const express = require('express'),
 path = require('path')
-//connectionUrl = 'mongodb://localhost:27017/applicationdb?authSource=admin'
-connectionUrl = 'mongodb://appuser2:appuser2@localhost:27017/applicationdb'
+
+localhostConnectionUrl = 'mongodb://localhost:27017/applicationdb?authSource=admin'
+
+
+///connectionUrl = 'mongodb://appuser2:appuser2@localhost:27017/applicationdb'
+ 
+connectionUrl = 'mongodb+srv://appuser:appuser@csc435-iiivf.mongodb.net/applicationdb?retryWrites=true&w=majority'
+
+
+
+
+
 const app = express()
 const PORT = process.env.PORT || 3000;
 
@@ -9,7 +19,58 @@ var usersApi = require('./routes')
 var bodyParser = require('body-parser')
 var mongoose = require('mongoose')
 
-mongoose.connect(process.env.MONGODB_URI || connectionUrl);
+//--------------
+//var MongoClient = require('mongodb').MongoClient;
+//
+//var uri = "mongodb+srv://kay:myRealPassword@cluster0.mongodb.net/test";
+//MongoClient.connect(uri, function(err, client) {
+//   const collection = client.db("applicationdb").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+//});
+//-------------
+
+//mongoose.connect(process.env.MONGODB_URI || connectionUrl);
+//mongoose.connect(localhostConnectionUrl);
+//mongoose.connect(connectionUrl);
+
+//------------------
+
+
+
+//mongoose.Promise = global.Promise;
+//mongoose.connect(process.env.MONGOLAB_URI || localhostConnectionUrl );
+mongoose.connect(connectionUrl );
+//mongoose.connect(localhostConnectionUrl );
+//
+//-----
+var promise = mongoose.connect(connectionUrl, {
+  useNewUrlParser: true,
+});
+//-----
+
+
+
+//------------
+//const db = process.env.MONGODB_URI;
+//const db = localhostConnectionUrl;
+//
+//
+//const connectDB = async () => {
+//	  console.log("connecting to db" + db)
+//  try{
+//    await mongoose.connect(db, {
+//      useUnifiedTopology: true,
+//      useNewUrlParser: true
+//    });
+//    console.log("MongoDB is Connected...");
+//  } catch (err) {
+//    console.log("MongoDB is notconnected...");
+//    console.error(err.message);
+//    process.exit(1);
+//  }
+//};
+//-------------------
 
 mongoose.connection.on('error', () => {
 	console.error('MongoDB Connection Error. Please make sure that MongoDB is running.')
