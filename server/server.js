@@ -3,15 +3,6 @@ path = require('path')
 
 localhostConnectionUrl = 'mongodb://localhost:27017/applicationdb?authSource=admin'
 
-
-///connectionUrl = 'mongodb://appuser2:appuser2@localhost:27017/applicationdb'
- 
-connectionUrl = 'mongodb+srv://appuser:appuser@csc435-iiivf.mongodb.net/applicationdb?retryWrites=true&w=majority'
-
-
-
-
-
 const app = express()
 const PORT = process.env.PORT || 3000;
 
@@ -19,58 +10,10 @@ var usersApi = require('./routes')
 var bodyParser = require('body-parser')
 var mongoose = require('mongoose')
 
-//--------------
-//var MongoClient = require('mongodb').MongoClient;
-//
-//var uri = "mongodb+srv://kay:myRealPassword@cluster0.mongodb.net/test";
-//MongoClient.connect(uri, function(err, client) {
-//   const collection = client.db("applicationdb").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-//});
-//-------------
-
-//mongoose.connect(process.env.MONGODB_URI || connectionUrl);
-//mongoose.connect(localhostConnectionUrl);
-//mongoose.connect(connectionUrl);
-
-//------------------
-
-
-
-//mongoose.Promise = global.Promise;
-//mongoose.connect(process.env.MONGOLAB_URI || localhostConnectionUrl );
-//mongoose.connect(connectionUrl );
-//mongoose.connect(localhostConnectionUrl );
-//
-//-----
 var promise = mongoose.connect(process.env.MONGODB_URI || localhostConnectionUrl, {
   useNewUrlParser: true,
 });
-//-----
 
-
-
-//------------
-//const db = process.env.MONGODB_URI;
-//const db = localhostConnectionUrl;
-//
-//
-//const connectDB = async () => {
-//	  console.log("connecting to db" + db)
-//  try{
-//    await mongoose.connect(db, {
-//      useUnifiedTopology: true,
-//      useNewUrlParser: true
-//    });
-//    console.log("MongoDB is Connected...");
-//  } catch (err) {
-//    console.log("MongoDB is notconnected...");
-//    console.error(err.message);
-//    process.exit(1);
-//  }
-//};
-//-------------------
 
 mongoose.connection.on('error', () => {
 	console.error('MongoDB Connection Error. Please make sure that MongoDB is running.')
@@ -82,7 +25,6 @@ const logger = (req, res, next) => {
     next()
 }
 
-// switched these around
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(logger)
@@ -114,15 +56,6 @@ const sendHTMLpage = (req, res) => {
     res.status(200).send(return_html)
 }
 
-/*app.get('/', (req, res) => {
-    sendHTMLpage(req, res);
-})
-
-app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});*/
-
-
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 
@@ -135,8 +68,6 @@ if (process.env.NODE_ENV === 'production') {
   })
 
 }
-
-
 
 app.listen(PORT, function () {
     console.log('Application listening on port ' + (process.env.PORT || 3000))
