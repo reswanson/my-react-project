@@ -5,13 +5,12 @@
     "node": "12.16.x"
   },
   "private": true,
-  "proxy": "http://localhost:3000/api",
+  "proxy": "http://localhost:3000/",
 "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "body-parser": "^1.17.2",
-    "proxy": "http://localhost:3000",
     "isomorphic-fetch": "^2.2.1",
     "mongojs": "^2.4.0",
     "mongoose": "^4.10.8",
