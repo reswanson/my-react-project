@@ -40,11 +40,11 @@ var mongoose = require('mongoose')
 
 //mongoose.Promise = global.Promise;
 //mongoose.connect(process.env.MONGOLAB_URI || localhostConnectionUrl );
-mongoose.connect(connectionUrl );
+//mongoose.connect(connectionUrl );
 //mongoose.connect(localhostConnectionUrl );
 //
 //-----
-var promise = mongoose.connect(connectionUrl, {
+var promise = mongoose.connect(process.env.MONGODB_URI || localhostConnectionUrl, {
   useNewUrlParser: true,
 });
 //-----
