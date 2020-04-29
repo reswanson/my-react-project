@@ -10,6 +10,8 @@ var bodyParser = require('body-parser')
 var mongoose = require('mongoose')
 
 // mongoose.connect('mongodb://appuser:appuser@localhost:27017/')
+//
+mongoose.connect(process.env.MONGOLAB_URI || connectionUrl);
 mongoose.connect(connectionUrl)
 
 mongoose.connection.on('error', () => {
