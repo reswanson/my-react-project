@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router,
   Link,
   Switch,
+  Redirect,
   Route
 } from 'react-router-dom';
 
@@ -82,14 +83,12 @@ componentWillUnmount () {
           <Route path="/newuser">
             <NewUser />
           </Route>
+          <Redirect from="*" to="/" />
         </Switch>
-
         <header className="App-footer">
           <Footer />
         </header>
-
         </div>
-
       </Router>
     );
   }

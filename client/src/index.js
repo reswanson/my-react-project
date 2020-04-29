@@ -11,9 +11,7 @@ import App from './App'
 import './index.css';
 
 
-// const store=createStore(CreateBookStore);
-const store = createStore(mybookstore);
-
+const store=createStore(mybookstore);
 
 ReactDOM.render(
   <Provider store={store}>
