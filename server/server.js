@@ -33,46 +33,48 @@ const sendHTMLpage = (req, res) => {
     bundle = ``
 
     //development mode gets bundle.js from webpack-dev-server at localhost:8080
-    //if (process.env.NODE_ENV == 'development') {
-    //    //bundle = `<script src="http://192.168.1.5:8080/assets/bundle.js"></script>`
-    //    bundle = `<script src="http://localhost:8080/assets/bundle.js"></script>`
-    //} else {
-    //    bundle = `<script src="assets/bundle.js"></script>`
-   // }
-
-    //return_html = `
-     //   <!DOCTYPE html>
-      //  <html>
-       //     <head>
-       //         <title>Served</title>
-       //     </head>
-       //     <body>
-       //         <div id="react-container"></div>
-       //         ` + bundle + `
-       //     </body>
-       // </html>`
-
+    if (process.env.NODE_ENV == 'development') {
+        bundle = `<script src="http://localhost:8080/assets/bundle.js"></script>`
+    } else {
+        bundle = `<script src="assets/bundle.js"></script>`
+    }
 
     return_html = `
         <!DOCTYPE html>
         <html>
             <head>
-                <title>HI</title>
+                <title>Served</title>
             </head>
             <body>
-                <div> <h1> Hi kkk</h1></div>
+                <div id="react-container"></div>
+                ` + bundle + `
             </body>
         </html>`
+
     res.status(200).send(return_html)
 }
 
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
     sendHTMLpage(req, res);
 })
 
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
+});*/
+
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+
+  const path = require('path');
+
+  app.get('*', (req,res) => {
+      res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+
+
+  })
+
+}
 
 
 
