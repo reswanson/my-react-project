@@ -9,10 +9,7 @@ var usersApi = require('./routes')
 var bodyParser = require('body-parser')
 var mongoose = require('mongoose')
 
-// mongoose.connect('mongodb://appuser:appuser@localhost:27017/')
-//
-mongoose.connect(process.env.MONGOLAB_URI || connectionUrl);
-mongoose.connect(connectionUrl)
+mongoose.connect(process.env.MONGODB_URI || connectionUrl);
 
 mongoose.connection.on('error', () => {
 	console.error('MongoDB Connection Error. Please make sure that MongoDB is running.')
