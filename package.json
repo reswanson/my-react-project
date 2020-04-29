@@ -15,6 +15,7 @@
     "concurrently": "^4.1.2"
   },
   "scripts": {
+    "start": "node ./server/server.js",
     "client": "npm start",
     "dev-server": "nodemon --exec 'node ./server/server.js'",
     "server": "nodemon --exec node ./server/server.js",
