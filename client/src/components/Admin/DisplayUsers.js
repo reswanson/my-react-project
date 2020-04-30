@@ -5,19 +5,25 @@ import React, { Component } from 'react';
 // pass the filename in as a prop
 class DisplayUsers extends Component {
 		
-		/*	{ this.props.body.map((users, index)=> {
+/*			      { this.props.userlist.map((users, index)=> {
 				return (
-				   <ul key={index.toString()}>
-  				     {users.username}</ul>
+				<tbody key={index.toString()}>
+			     <tr>
+  					<td>{users.username}</td>
+  					<td>{users.email}</td>
+				</tr>
+				</tbody>
 				)
-		    })}*/
-
+		    })}
+*/
+		
+		
 	render () {
 		return (
 		  <div>
             <h5> List of users in the DB</h5>
             <p/>
-            {this.props.userlist}
+              {this.props.userlist}
 		  </div>
 		)
 	}	
