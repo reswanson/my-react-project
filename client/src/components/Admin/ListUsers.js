@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DisplayUsers from './DisplayUsers'
 
 
 
@@ -23,9 +24,7 @@ handleSubmit = async e => {
       method: 'GET'
     });
     const body = await response.text();
-    
     this.setState({ responseToPost: body });
-//      console.log(response.text());
      console.log(body);
   };
 
@@ -33,9 +32,9 @@ handleSubmit = async e => {
 	render () {
 		return (
 		  <div>
-       <button type="submit"  onClick={this.handleSubmit}>Show users</button>
-       <br/>
-       <p>{this.responseToPost}</p>
+            <button type="submit"  onClick={this.handleSubmit}>Show users</button>
+            <br/>
+            <DisplayUsers userlist={this.state.responseToPost} />
 		  </div>
 		)
 	}	
