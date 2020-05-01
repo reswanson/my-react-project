@@ -1,13 +1,4 @@
 import React, { Component } from 'react';
-// import { UsersContainers } from './UsersContainers'
-
-//const UsersApp = () =>
-//    <div>
-//        <AddUserContainer />
-//        <UserContainer />
-//    </div>
-
-// export default TodoListApp
 
 
 class NewUser extends Component {
@@ -35,19 +26,6 @@ class NewUser extends Component {
     
   }
 
-
-
-//  handleSubmit(event) {
-//    event.preventDefault();
-//    this.setState({ submitted: true });
-//    const { username, password } = this.state;
-//    if (username && password) {
-//	  console.log("Creating New user with details of: " + username + " : " + password)
-
-      // Call this to handle new user request, using this page: https://jasonwatmore.com/post/2017/09/16/react-redux-user-registration-and-login-tutorial-example
-      // this.props.login(username, password);
-////    }
-//  }
 
   handleSubmit = async e => {
     e.preventDefault();
