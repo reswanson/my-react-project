@@ -32,7 +32,7 @@ handleSubmit = async e => {
 	render () {
 		return (
 		  <div>
-            <button type="submit"  onClick={this.handleSubmit}>Show users</button>
+            <button type="submit"  onClick={this.handleSubmit}>List users</button>
             <br/>
             <DisplayUsers userlist={this.state.responseToPost} />
 		  </div>

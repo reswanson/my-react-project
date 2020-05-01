@@ -30,17 +30,14 @@ router.get('/users',  (req, res) => {
     })
 })
 
-
-
 router.delete('/users/:id', function (req, res) {
-    Users.find({id: req.params.id}).remove(function (err, obj) {
-        if (err) return console.error(err)
-        else {
-            if (obj.result.n === 0) {
-                res.send('id not found')
-            } else {
-                res.send('todo deleted')
-            }
+	console.log("in DELETE user")
+
+    MyUsers.find({_id: req.params.id}).remove(function (err, obj) {
+        if (err) {
+	      res.status(500).send({error: "Could not delete id..."});           
+        } else {
+	      res.status(200).send({error: "Id deleted..."});           
         }
     })
 })
@@ -49,7 +46,7 @@ router.delete('/users/:id', function (req, res) {
 
 router.put('/users/:id', function (req, res) {
 
-    Users.update({id: req.params.id},    //condition
+    MyUsers.update({id: req.params.id},    //condition
                 {username: req.body.username},//info updated
                 //{email: req.body.	},
                 function (err, obj) {
@@ -58,7 +55,7 @@ router.put('/users/:id', function (req, res) {
             if (obj.n === 0) {
                 res.send('id not found')
             } else {
-                res.send('todo updated')
+                res.send('user updated')
             }
         }
     })
